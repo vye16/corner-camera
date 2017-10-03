@@ -1,0 +1,59 @@
+*~
+*.pyc
+
+# Edit files
+*.swp
+*.m~
+*.DS_Store
+
+# Various image/video other test files
+*.MOV
+*.avi
+*.png
+*.tiff
+*.mat
+*.fig
+*.jpg
+*.csv
+*.mp4
+
+# Ignored files for c++ module
+# CMake stuff
+*/**/build/*
+*/**/CMakeFiles/
+*/**/CMakeCache.txt
+*/**/Makefile
+*/**/*.cmake
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
