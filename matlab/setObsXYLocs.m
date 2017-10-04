@@ -18,19 +18,20 @@ if params.rectify
     wall_angle = mod(round(wall_angle * 2/pi) * pi/2, 2*pi);
     ground_angle = mod(atan2(gy - cy, gx - cx), 2*pi);
     ground_angle = mod(round(ground_angle * 2/pi)*pi/2, 2*pi);
-
-    % get the angle of the wall to the vertical wall, unrectified
-%     vert_angle = pi/2 + mod(atan2(wall_vec(:,2), wall_vec(:,1)), 2*pi);
-%     if vert_angle < pi % go clockwise
-%         theta_lim = [wall_angle, wall_angle + pi/2];
-%     else
-%         theta_lim = [wall_angle, wall_angle - pi/2];
-%     end
 else
     wall_angle = mod(atan2(wall_vec(:,2), wall_vec(:,1)), 2*pi);
     ground_angle = mod(atan2(ground_vec(:,2), ground_vec(:,1)), 2*pi);
 end
-theta_lim = [wall_angle, ground_angle];
+
+diff_angle = ground_angle - wall_angle;
+if abs(diff_angle) < pi
+    end_angle = wall_angle + diff_angle;
+else
+    diff_angle = 2*pi - abs(diff_angle);
+    end_angle = wall_angle - sign(diff_angle) * diff_angle;
+end
+
+theta_lim = [wall_angle, end_angle];
 
 fprintf('corner located at %.2f, %.2f\n', corner(1), corner(2));
 fprintf('theta limits set to %.2f, %.2f\n', theta_lim(1), theta_lim(2));
