@@ -4,21 +4,19 @@ clear; close all;
 debug = 1;
 
 % TODO: INPUT PATH TO TEST VIDEOS
-datafolder = '';
+datafolder = 'path/to/example_videos/';
 
 % TODO: CHOOSE WHICH VIDEOS TO RUN
-expname = 'indoors';
+expname = 'stereo';
 calname = 'calibrationgrid';
 vidtype = '.MP4';
 input_type = 'video';
 names = {...
-    'one_person_walking_circles',...
-    'one_person_walking_randomly',...
-    'two_people_walking_circles',...
-    'two_people_walking_randomly'...
+    'blue_person_walking_circles',...
+    'red_person_walking_circles',...
     };
 
-expfolder = fullfile(datafolder, expname, 'experiments');
+expfolder = fullfile(datafolder, expname);
 
 % TODO: SET RESULT DIRECTORY
 resfolder = fullfile(datafolder, expname, 'results');
