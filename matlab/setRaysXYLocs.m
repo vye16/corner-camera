@@ -24,8 +24,6 @@ if params.rectify
     [xq, yq] = mapFromRectified(params.homography, xq, yq);
 end
 params.obs_angles(params.obs_angles <= 0) = params.theta_lim(2);
-% params.obs_xlocs = xq(:);
-% params.obs_ylocs = yq(:);
-params.obs_xlocs = xq;
-params.obs_ylocs = yq;
+params.obs_xlocs = xq(:);
+params.obs_ylocs = yq(:);
 end

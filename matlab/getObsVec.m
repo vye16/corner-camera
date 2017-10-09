@@ -4,9 +4,8 @@ samples = zeros([numel(params.obs_xlocs), size(frame,3)]);
 
 [yy, xx] = ndgrid(1:size(frame,1), 1:size(frame,2));
 for i = 1:size(frame,3)
-    interpvals = interp2(xx, yy, frame(:,:,i),...
+    samples(:,i) = interp2(xx, yy, frame(:,:,i),...
         params.obs_xlocs, params.obs_ylocs);
-    samples(:,i) = interpvals(:);
 end
 
 nanrows = any(isnan(samples), 2);
