@@ -77,18 +77,20 @@ void Inference::setObsRegion(cv::Point corner,
 
   float diff_angle = end_angle - wall_angle;
   float angle_dir = diff_angle / abs(diff_angle);
-  printf("%f, %f, diff angle %f, angle dir %f\n",
-      wall_angle, end_angle, diff_angle, angle_dir);
+  printf("selected point on wall at angle %f\n", wall_angle);
+  printf("selected ending point at angle %f\n", end_angle);
 
   theta_start_ = wall_angle;
   if (abs(diff_angle) < CV_PI) {
-    printf("1\n");
+    printf("keep the current dir from wall to end point\n");
     theta_end_ = wall_angle + diff_angle;
   } else {
-    printf("2\n");
+    printf("reverse the dir from wall to end point\n");
     diff_angle = 2*CV_PI - abs(diff_angle);
     theta_end_ = wall_angle - angle_dir * diff_angle;
   }
+  printf("starting angle: %f, ending angle: %f\n",
+      theta_start_, theta_end_);
 }
 
 
