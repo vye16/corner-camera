@@ -17,9 +17,10 @@ int main()
   float rstep = 20;
   double lambda = 7;
   double beta = 100;
+  double alpha = 0.99;
 
   Inference inf = Inference(corner, wallpt, endpt,
-      nangles, ncircles, rstep, lambda, beta);
+      nangles, ncircles, rstep, lambda, beta, alpha);
 
   inf.setup();
 

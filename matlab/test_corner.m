@@ -1,22 +1,19 @@
 clear; close all;
 
-
-debug = 1;
-
 % TODO: INPUT PATH TO TEST VIDEOS
 datafolder = '/path/to/example_videos/';
 
 % TODO: CHOOSE WHICH VIDEOS TO RUN
-expname = 'outdoors';
-calname = 'calibrationgrid';
-vidtype = '.MP4';
-input_type = 'video';
-names = {...
-    'one_person_walking_circles',...
-    'one_person_walking_randomly',...
-    'two_people_walking_circles',...
-    'two_people_walking_randomly'...
-    };
+addpath('example_params')
+
+% select the videos to process below
+indoor_loc1
+%indoor_loc2
+%outdoor_concrete
+%outdoor_bricks
+
+debug = 1;
+
 expfolder = fullfile(datafolder, expname);
 
 % TODO: SET RESULT DIRECTORY
